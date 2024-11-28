@@ -391,18 +391,22 @@ section {
   transform: scale(1.02); /* Slightly enlarges the project card on hover */
 }
 
-.project--card img {
-  max-width: 300px; /* Limits the maximum width of the image to 300px */
-  border-radius: 2rem; /* Rounds the corners of the image */
-  object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
-}
+/* .project--card img {
+  max-width: 300px;  Limits the maximum width of the image to 300px 
+  border-radius: 2rem; Rounds the corners of the image 
+  object-fit: cover;  Ensures the image covers the container while maintaining aspect ratio 
+} */
 
 .project--card h3 {
   font-size: 3rem; /* Sets the font size for the project title */
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .project--card p {
   font-size: 1.6rem; /* Sets the font size for the project description */
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .contact {
@@ -541,6 +545,11 @@ section {
   .contact form {
     flex-direction: column; /* Stacks contact form elements vertically */
   }
+  .about h2 {
+    font-size: 5rem; /* Sets the font size for the heading in the about section */
+    text-align: center; /* Centers the heading text in the about section */
+    margin-bottom: 6rem;
+  }
 }
 
 /* Medium screens - Max width 1024px */
@@ -572,6 +581,11 @@ section {
   .home {
     gap: 4rem; /* Adds a 4rem gap between home section elements */
     margin: 4rem 0; /* Adds a 4rem margin on top and bottom */
+  }
+  .about h2 {
+    font-size: 5.5rem; /* Sets the font size for the heading in the about section */
+    text-align: center; /* Centers the heading text in the about section */
+    margin-bottom: 6rem;
   }
 }
 
@@ -621,8 +635,9 @@ section {
   }
 
   .about h2 {
-    font-size: 7rem; /* Sets the font size for the heading in the about section */
+    font-size: 4.7rem; /* Sets the font size for the heading in the about section */
     text-align: center; /* Centers the heading text in the about section */
+    margin-bottom: 3rem;
   }
 
   .header--button {
@@ -670,8 +685,9 @@ section {
   }
 
   .about h2 {
-    font-size: 7rem; /* Sets the font size for the heading in the about section */
+    font-size: 4.6rem; /* Sets the font size for the heading in the about section */
     text-align: center; /* Centers the heading text in the about section */
+    margin-bottom: 3rem;
   }
 }
 
@@ -722,8 +738,9 @@ section {
   }
 
   .about h2 {
-    font-size: 3rem; /* Sets the font size for the heading in the about section */
+    font-size: 4.5rem; /* Sets the font size for the heading in the about section */
     text-align: center; /* Centers the heading text in the about section */
+    margin-bottom: 2rem;
   }
 
   .about p {

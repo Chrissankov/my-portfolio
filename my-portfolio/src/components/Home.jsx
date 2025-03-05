@@ -13,13 +13,11 @@ export default function Home() {
         </h3>
         <p>
           I specialize in building responsive, fast, and user-friendly websites
-          using HTML, CSS, JavaScript, and React. With a background in computer
-          and communications engineering, I bring a deep technical understanding
-          to my development process, allowing me to create clean, efficient code
-          that delivers smooth and intuitive user experiences across devices.
-          Whether it's optimizing performance or ensuring seamless
-          functionality, I'm dedicated to solving problems and bringing ideas to
-          life through modern web development.
+          using modern front-end technologies. With a background in Computer
+          Engineering, I focus on writing clean, efficient code that ensures
+          seamless performance across devices. Whether optimizing functionality
+          or enhancing user experience, I am dedicated to solving problems and
+          bringing ideas to life through modern web development
         </p>
         <div className="social-icons">
           <a
@@ -30,21 +28,21 @@ export default function Home() {
             <i className="bx bxl-github"></i>
           </a>
           <a
-            href="https://www.linkedin.com/in/christian-tannoury-68a88b237?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+            href="https://www.linkedin.com/in/christian-tannoury-68a88b237/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="bx bxl-linkedin-square"></i>
           </a>
           <a
-            href="https://www.instagram.com/chris.f.tannoury?igsh=MTVzbTdremV6azF5Yg%3D%3D&utm_source=qr"
+            href="https://www.instagram.com/chris.f.tannoury/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="bx bxl-instagram-alt"></i>
           </a>
           <a
-            href="https://www.facebook.com/tannoury.chris?mibextid=LQQJ4d"
+            href="https://www.facebook.com/tannoury.chris/"
             target="_blank"
             rel="noopener noreferrer"
           >

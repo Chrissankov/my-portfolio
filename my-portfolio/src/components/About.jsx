@@ -9,15 +9,13 @@ export default function About() {
           About <span>Me</span>
         </h2>
         <p>
-          I am a passionate front-end developer with a background in computer
-          engineering. With strong expertise in both hardware and software, I
-          bring a unique perspective to front-end development. My focus is on
-          creating responsive, user-friendly websites using technologies like
-          HTML, CSS, JavaScript, and React. I love solving complex problems
-          through creative coding, and I'm always excited to learn and implement
-          the latest web development trends. Whether working on solo projects or
-          in a team, I am committed to delivering high-quality results that meet
-          client needs and enhance user experience.
+          I am a passionate Front-End Developer who loves creating intuitive and
+          engaging web experiences. My expertise lies in crafting responsive and
+          accessible websites using core web technologies and related frameworks
+          and libraries. I enjoy solving complex challenges through creative
+          coding and continuously learning the latest web technologies. Whether
+          working independently or in a team, I strive to deliver high-quality
+          solutions that elevate user experience and meet project goals.
         </p>
         <a href="#services" className="button">
           Read More

@@ -10,21 +10,21 @@ export default function Footer() {
           <i className="bx bxl-github"></i>
         </a>
         <a
-          href="https://www.linkedin.com/in/christian-tannoury-68a88b237?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+          href="https://www.linkedin.com/in/christian-tannoury-68a88b237/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <i className="bx bxl-linkedin-square"></i>
         </a>
         <a
-          href="https://www.instagram.com/chris.f.tannoury?igsh=MTVzbTdremV6azF5Yg%3D%3D&utm_source=qr"
+          href="https://www.instagram.com/chris.f.tannoury/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <i className="bx bxl-instagram-alt"></i>
         </a>
         <a
-          href="https://www.facebook.com/tannoury.chris?mibextid=LQQJ4d"
+          href="https://www.facebook.com/tannoury.chris/"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -1,0 +1,755 @@
+* {
+  margin: 0; /* Removes default margins from all elements */
+  padding: 0; /* Removes default padding from all elements */
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  text-decoration: none; /* Removes underline from text links */
+  scroll-behavior: smooth; /* Enables smooth scrolling when navigating with anchors */
+  font-family: "Poppins"; /* Sets the default font for the entire document to "Poppins" */
+}
+
+:root {
+  --bg-color: #080808; /* Defines a custom property for background color */
+  --second-bg-color: #101010; /* Defines a custom property for secondary background color */
+  --text-color: white; /* Defines a custom property for text color */
+  --main-color: #ea580c; /* Defines a custom property for the main accent color */
+}
+
+html {
+  font-size: 60%; /* Sets the base font size to 60% of the default (usually 16px, so 9.6px) */
+  overflow-x: hidden; /* Prevents horizontal scrolling on the entire webpage */
+}
+
+body {
+  background-color: var(
+    --bg-color
+  ); /* Applies the background color defined in the custom property */
+  color: var(
+    --text-color
+  ); /* Applies the text color defined in the custom property */
+}
+.header {
+  position: fixed; /* Fixes the header at the top of the page, making it always visible */
+  width: 100%; /* Ensures the header spans the entire width of the page */
+  top: 0; /* Positions the header at the very top of the page */
+  left: 0; /* Aligns the header to the left of the page */
+  padding: 3rem 10%; /* Adds padding (3rem top/bottom, 10% left/right) for spacing */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.3
+  ); /* Applies a semi-transparent black background */
+  backdrop-filter: blur(10px); /* Adds a blur effect behind the header */
+  display: flex; /* Uses flexbox layout for header contents */
+  justify-content: space-between; /* Distributes items with space between them */
+  align-items: center; /* Aligns items vertically in the center */
+  z-index: 1000; /* Sets a high stacking order to ensure the header stays on top */
+}
+
+#menu-icon {
+  font-size: 3.5rem; /* Sets the size of the menu icon */
+  color: var(
+    --main-color
+  ); /* Colors the menu icon with the main accent color */
+  display: none; /* Initially hides the menu icon, to be shown later via media queries */
+}
+
+.header--logo {
+  font-size: 3rem; /* Sets the font size for the logo */
+  color: var(--text-color); /* Colors the logo with the text color */
+  font-weight: 800; /* Makes the logo text bold */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the logo */
+  transition: 0.3s ease-in-out; /* Adds a smooth transition for the hover effect */
+}
+
+.header--logo:hover {
+  transform: scale(1.1); /* Scales the logo slightly when hovered */
+}
+
+span {
+  background: linear-gradient(
+    270deg,
+    #df8908 10%,
+    #ff1d15 100%
+  ); /* Applies a gradient background from orange to red */
+  background-clip: text; /* Clips the background to the shape of the text */
+  color: transparent; /* Makes the text itself transparent, showing only the gradient */
+}
+
+.header--nav a {
+  font-size: 1.6rem; /* Sets the font size for navigation links */
+  color: var(--text-color); /* Colors the links with the text color */
+  margin-left: 4rem; /* Adds left margin for spacing between links */
+  font-weight: 500; /* Gives the links medium weight */
+  transition: 0.3s ease-in-out; /* Adds a smooth transition for the hover effect */
+  border-bottom: 3px solid transparent; /* Initially makes the bottom border invisible */
+}
+
+.header--nav a:hover {
+  color: var(
+    --main-color
+  ); /* Changes the link color to the main accent color on hover */
+  border-bottom: 3px solid var(--main-color); /* Adds an accent color underline on hover */
+}
+
+.header--button {
+  font-size: 1.8rem; /* Sets the font size for the button */
+  padding: 1rem 2rem; /* Adds padding for the button (1rem top/bottom, 2rem left/right) */
+  border-radius: 3rem; /* Rounds the corners of the button */
+  background: linear-gradient(
+    270deg,
+    #df8908 10%,
+    #ff1d15 100%
+  ); /* Applies a gradient background from orange to red */
+  letter-spacing: 1px; /* Adds space between the letters in the button text */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+  transition: 0.3s ease-in-out; /* Adds a smooth transition for the hover effect */
+  color: white; /* Colors the button text white */
+  border: none; /* Removes any default border from the button */
+  text-wrap: nowrap; /* Prevents the text from wrapping inside the button */
+}
+
+.header--button:hover {
+  transform: scale(1.05); /* Slightly enlarges the button when hovered */
+}
+
+section {
+  min-height: 100vh; /* Ensures the section takes up at least 100% of the viewport height */
+  padding: 15rem 15%; /* Adds padding (15rem top/bottom, 15% left/right) to the section */
+}
+
+.home {
+  display: flex; /* Applies flexbox layout to align elements inside the home section */
+  align-items: center; /* Vertically centers items in the home section */
+  justify-content: center; /* Horizontally centers items in the home section */
+  gap: 15rem; /* Adds a 15rem gap between the home section's items */
+}
+
+.home--content {
+  display: flex; /* Uses flexbox to arrange content */
+  flex-direction: column; /* Stacks content vertically */
+  align-items: flex-end; /* Aligns items to the right (end) */
+  text-align: right; /* Aligns text to the right */
+}
+
+.home--content h1 {
+  font-size: 7rem; /* Sets the font size of the heading */
+  font-weight: 700; /* Makes the heading bold */
+  margin-top: 1.5rem; /* Adds a top margin to the heading */
+  line-height: 1; /* Sets line height to normal (no extra spacing) */
+  white-space: nowrap; /* Prevents the text from wrapping to the next line */
+}
+
+.home--content h3 {
+  margin: 1rem 0; /* Adds a margin of 1rem on top and bottom, none on sides */
+  font-size: 4rem; /* Sets the font size for the subheading */
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+}
+
+.home--content p {
+  font-size: 1.5rem; /* Sets the font size for the paragraph */
+  font-weight: 500; /* Makes the paragraph text slightly bold */
+  line-height: 1.8; /* Increases line height for better readability */
+}
+
+.image img {
+  width: 32dvw; /* Sets the image width to 32% of the viewport's dynamic width */
+  border-radius: 50%; /* Makes the image circular */
+  box-shadow: 0 0 25px var(--main-color); /* Applies a glowing shadow with the main color */
+  transition: 0.4s ease-in-out; /* Adds a smooth transition when the image is hovered */
+}
+
+.image img:hover {
+  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color),
+    0 0 100px var(--main-color); /* Increases shadow intensity on hover */
+}
+
+.social-icons a {
+  display: inline-flex; /* Aligns icon content in the middle using flexbox */
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center; /* Centers the content vertically */
+  font-size: 3rem; /* Sets the font size for the social icons */
+  padding: 1rem; /* Adds padding around each social icon */
+  background: transparent; /* Makes the background transparent */
+  border: 2px solid var(--main-color); /* Adds a border using the main accent color */
+  border-radius: 50%; /* Makes the social icon circular */
+  color: var(
+    --main-color
+  ); /* Colors the social icon text with the main color */
+  margin: 3rem 0.5rem; /* Adds margin (3rem top/bottom, 0.5rem left/right) */
+  transition: 0.3 ease-in-out; /* Adds a smooth transition when the icons are hovered */
+  text-decoration: none; /* Removes underlining for the icons */
+}
+
+.social-icons a:hover {
+  color: white; /* Changes the icon color to white on hover */
+  background-color: var(
+    --main-color
+  ); /* Changes the background color to the main color */
+  transform: scale(1.2) translateY(-5px); /* Enlarges and moves the icon upwards slightly */
+  box-shadow: 0 0 25px var(--main-color); /* Adds a glowing shadow effect */
+}
+
+.home--buttons {
+  display: flex; /* Applies flexbox to arrange buttons in a row */
+  gap: 1.5rem; /* Adds a gap of 1.5rem between the buttons */
+}
+
+.button {
+  display: inline-block; /* Ensures the button behaves like an inline block element */
+  padding: 1rem 3rem; /* Adds padding (1rem top/bottom, 3rem left/right) inside the button */
+  background-color: var(
+    --main-color
+  ); /* Sets the background color of the button */
+  box-shadow: 0 0 25px var(--main-color); /* Adds a glowing shadow with the main color */
+  border-radius: 3rem; /* Rounds the corners of the button */
+  font-size: 1.8rem; /* Sets the font size for the button text */
+  color: black; /* Sets the button text color to black */
+  border: 2px solid transparent; /* Initially makes the border invisible */
+  font-weight: 600; /* Makes the button text slightly bold */
+  transition: 0.3s ease-in-out; /* Adds a smooth transition for hover effects */
+}
+
+.button:hover {
+  transform: scale(1.05); /* Slightly enlarges the button when hovered */
+  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color); /* Intensifies the glowing shadow */
+}
+
+.button:nth-of-type(2) {
+  background-color: black; /* Changes the background color of the second button to black */
+  color: var(
+    --main-color
+  ); /* Changes the text color to the main accent color */
+  border: 2px solid var(--main-color); /* Adds a border with the main color */
+  box-shadow: 0 0 25px transparent; /* Makes the box shadow transparent (invisible) initially */
+}
+
+.button:nth-of-type(2):hover {
+  box-shadow: 0 0 25px var(--main-color); /* Adds a glowing shadow with the main color on hover */
+  background-color: var(
+    --main-color
+  ); /* Changes the background color to the main color on hover */
+  color: black; /* Changes the text color to black on hover */
+}
+
+.about {
+  display: flex; /* Uses flexbox to arrange items in a row */
+  justify-content: center; /* Horizontally centers the content */
+  align-items: center; /* Vertically centers the content */
+  gap: 10rem; /* Adds a 10rem gap between the elements inside the about section */
+  background-color: var(
+    --second-bg-color
+  ); /* Sets the background color to the secondary background color */
+}
+
+.about--content h2 {
+  font-size: 7rem; /* Sets the font size of the heading */
+  text-align: left; /* Aligns the heading text to the left */
+}
+
+.about--content p {
+  font-size: 1.8rem; /* Sets the font size of the paragraph */
+}
+
+.about--content .button {
+  margin: 3rem 0; /* Adds margin (3rem top/bottom, 0 left/right) around the button */
+}
+
+::-webkit-scrollbar {
+  width: 20px; /* Sets the width of the scrollbar for WebKit browsers */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(
+    --main-color
+  ); /* Sets the color of the scrollbar thumb to the main accent color */
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(
+    --bg-color
+  ); /* Sets the color of the scrollbar track to the background color */
+}
+
+.services--title {
+  text-align: center; /* Centers the title text horizontally */
+  color: white; /* Sets the text color to white */
+  font-size: 7rem; /* Sets the font size for the services section title */
+  margin: 5rem 0; /* Adds a 5rem margin on top and bottom */
+}
+
+.services {
+  background-color: var(
+    --bg-color
+  ); /* Sets the background color of the services section */
+  color: black; /* Sets the default text color to black */
+}
+
+.services--container {
+  display: grid; /* Applies grid layout to the container */
+  justify-content: center; /* Centers the grid items horizontally */
+  align-items: center; /* Aligns grid items vertically in the center */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(294px, 1fr)
+  ); /* Creates flexible grid columns with a minimum width of 294px */
+  grid-template-rows: auto auto; /* Defines two automatic grid rows */
+  gap: 1.5rem; /* Adds a 1.5rem gap between grid items */
+}
+
+.service--box {
+  display: flex; /* Uses flexbox to layout the box */
+  justify-content: center; /* Horizontally centers the content in the box */
+  align-items: center; /* Vertically centers the content in the box */
+  background-color: var(
+    --main-color
+  ); /* Sets the background color of the service box */
+  height: 600px; /* Defines a fixed height for the service box */
+  border-radius: 3rem; /* Rounds the corners of the service box */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering */
+  border: 5px solid transparent; /* Initially makes the border invisible */
+  transition: 0.4s ease-in-out; /* Adds a smooth transition effect on hover */
+}
+
+.service--box:hover {
+  background-color: var(
+    --second-bg-color
+  ); /* Changes the background color on hover */
+  color: var(
+    --main-color
+  ); /* Changes the text color to the main accent color on hover */
+  border: 5px solid var(--main-color); /* Adds a visible border with the main accent color on hover */
+  transform: scale(1.03); /* Slightly enlarges the service box on hover */
+}
+
+.service--info {
+  display: flex; /* Uses flexbox for the service info layout */
+  flex-direction: column; /* Stacks the content vertically */
+  align-items: center; /* Centers the content horizontally */
+  padding: 4.7rem; /* Adds padding inside the service info section */
+}
+
+.service--info h4 {
+  font-size: 4rem; /* Sets the font size of the service title */
+  margin: 2rem 0; /* Adds margin (2rem top/bottom, none left/right) around the title */
+  font-weight: 800; /* Makes the service title very bold */
+}
+
+.service--info p {
+  font-size: 1.4rem; /* Sets the font size for the service description */
+  font-weight: 600; /* Makes the description text bold */
+  line-height: 1.7; /* Increases line height for readability */
+}
+
+.service--info i {
+  font-size: 8rem; /* Sets the size of the icon inside the service info */
+}
+
+.projects {
+  background-color: var(
+    --second-bg-color
+  ); /* Sets the background color of the projects section */
+}
+
+.projects--title {
+  text-align: center; /* Centers the title text horizontally */
+  color: white; /* Sets the title text color to white */
+  font-size: 7rem; /* Sets the font size for the project section title */
+  margin: 5rem 0; /* Adds a 5rem margin on top and bottom */
+}
+
+.projects--container {
+  display: grid; /* Uses grid layout for the project cards */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Automatically adjusts the number of columns based on available space, with a minimum width of 300px */
+  grid-template-rows: auto auto; /* Defines two automatic grid rows */
+  gap: 3rem; /* Adds a 3rem gap between grid items */
+}
+
+.project--card {
+  display: flex; /* Uses flexbox to lay out the content inside the project card */
+  flex-direction: column; /* Stacks the content vertically */
+  align-items: center; /* Horizontally centers the content */
+  justify-content: center; /* Vertically centers the content */
+  background-color: var(
+    --bg-color
+  ); /* Sets the background color of the project card */
+  border: 2px solid var(--main-color); /* Adds a 2px solid border with the main accent color */
+  border-radius: 3rem; /* Rounds the corners of the project card */
+  gap: 2rem; /* Adds a 2rem gap between the elements inside the card */
+  padding: 5rem; /* Adds padding inside the project card */
+  overflow: hidden; /* Hides any content that overflows the card boundaries */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering */
+  box-shadow: 0 0 5px var(--main-color); /* Adds a subtle shadow with the main accent color */
+  transition: 0.3s ease-in-out; /* Adds a smooth transition for hover effects */
+}
+
+.project--card:hover {
+  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color); /* Intensifies the glowing shadow on hover */
+  transform: scale(1.02); /* Slightly enlarges the project card on hover */
+}
+
+/* .project--card img {
+  max-width: 300px;  Limits the maximum width of the image to 300px 
+  border-radius: 2rem; Rounds the corners of the image 
+  object-fit: cover;  Ensures the image covers the container while maintaining aspect ratio 
+} */
+
+.project--card h3 {
+  font-size: 3rem; /* Sets the font size for the project title */
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.project--card p {
+  font-size: 1.6rem; /* Sets the font size for the project description */
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact {
+  background-color: var(
+    --bg-color
+  ); /* Sets the background color of the contact section */
+}
+
+.contact h2 {
+  font-size: 7rem; /* Sets the font size for the contact section heading */
+  text-align: center; /* Centers the heading text horizontally */
+  color: var(--text-color); /* Sets the text color to the defined text color */
+  margin: 5rem 0; /* Adds a 5rem margin on top and bottom */
+}
+
+.contact form {
+  display: flex; /* Uses flexbox to arrange the form elements */
+  align-items: center; /* Vertically centers the form elements */
+  justify-content: center; /* Horizontally centers the form elements */
+  gap: 3rem; /* Adds a 3rem gap between the form elements */
+  margin: 5rem 0; /* Adds a 5rem margin on top and bottom of the form */
+}
+
+.contact form .input-box input,
+.contact form textarea {
+  width: 100%; /* Sets the width of the input and textarea to fill the container */
+  padding: 2.5rem; /* Adds 2.5rem of padding inside the input and textarea */
+  font-size: 1.8rem; /* Sets the font size for the input and textarea text */
+  color: var(--text-color); /* Sets the text color for input and textarea */
+  background-color: var(
+    --bg-color
+  ); /* Sets the background color for input and textarea */
+  border-radius: 2rem; /* Rounds the corners of the input and textarea */
+  border: 2px solid var(--main-color); /* Adds a 2px solid border with the main accent color */
+  margin: 1.5rem 0; /* Adds a 1.5rem margin on top and bottom of the input and textarea */
+  resize: none; /* Disables resizing for the textarea */
+}
+
+.contact form textarea {
+  margin-bottom: 5rem; /* Adds a 5rem margin to the bottom of the textarea */
+}
+
+.footer {
+  background-color: var(
+    --second-bg-color
+  ); /* Sets the background color of the footer */
+  padding: 50px 0; /* Adds padding of 50px on top and bottom of the footer */
+}
+
+.footer .social-icons {
+  text-align: center; /* Centers the social icons horizontally */
+}
+
+.footer ul {
+  text-align: center; /* Centers the list horizontally */
+  font-size: 1.8rem; /* Sets the font size for the list items */
+}
+
+.footer ul li {
+  display: inline-block; /* Displays the list items inline */
+  margin-left: 2rem; /* Adds a left margin of 2rem to each list item */
+}
+
+.footer ul li a {
+  color: white; /* Sets the link color to white */
+  border-bottom: 3px solid transparent; /* Adds a transparent bottom border to links */
+  transition: 0.3s ease-in-out; /* Adds a smooth transition effect for hover states */
+}
+
+.footer ul li a:hover {
+  border-bottom: 3px solid var(--main-color); /* Changes the bottom border color to the main accent color on hover */
+}
+
+.footer .copyright {
+  text-align: center; /* Centers the copyright text horizontally */
+  margin-top: 4rem; /* Adds a top margin of 4rem */
+  font-size: 1.6rem; /* Sets the font size for the copyright text */
+}
+
+/* Large screens - Max width 1285px */
+@media (max-width: 1285px) {
+  #menu-icon {
+    display: block; /* Displays the menu icon */
+    font-size: 4rem; /* Sets the font size for the menu icon */
+    cursor: pointer; /* Changes the cursor to pointer on hover */
+  }
+
+  .header--nav {
+    display: none; /* Hides the navigation by default */
+    position: absolute; /* Positions the navigation absolutely */
+    top: 100%; /* Places the navigation directly below the header */
+    padding: 1rem 3rem; /* Adds padding inside the navigation */
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.8
+    ); /* Sets a semi-transparent black background */
+    border-radius: 2rem; /* Rounds the corners of the navigation */
+    border: 2px solid var(--main-color); /* Adds a border with the main accent color */
+    border-top: none; /* Removes the top border */
+  }
+
+  .header--nav.active {
+    display: block; /* Displays the navigation when it's active */
+  }
+
+  .header--nav a {
+    font-size: 2rem; /* Sets the font size for navigation links */
+    margin: 1rem; /* Adds a margin around the navigation links */
+  }
+
+  .header--button {
+    font-size: 2rem; /* Sets the font size for header buttons */
+  }
+
+  .home {
+    flex-direction: column-reverse; /* Stacks home section elements in reverse order */
+    margin: 5rem 0; /* Adds a 5rem margin on top and bottom */
+    gap: 5rem; /* Adds a 5rem gap between elements */
+  }
+
+  .image img {
+    width: 52vw; /* Sets the image width to 52% of the viewport width */
+  }
+
+  .about {
+    flex-direction: column-reverse; /* Stacks about section elements in reverse order */
+    text-align: center; /* Centers the text in the about section */
+  }
+
+  .about--content h2 {
+    text-align: center; /* Centers the heading in the about content */
+  }
+
+  .contact form {
+    flex-direction: column; /* Stacks contact form elements vertically */
+  }
+  .about h2 {
+    font-size: 5rem; /* Sets the font size for the heading in the about section */
+    text-align: center; /* Centers the heading text in the about section */
+    margin-bottom: 6rem;
+  }
+}
+
+/* Medium screens - Max width 1024px */
+@media (max-width: 1024px) {
+  .header--nav {
+    display: none; /* Hides the navigation by default */
+    position: absolute; /* Positions the navigation absolutely */
+    top: 100%; /* Places the navigation directly below the header */
+    padding: 1rem 3rem; /* Adds padding inside the navigation */
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.8
+    ); /* Sets a semi-transparent black background */
+    border-radius: 2rem; /* Rounds the corners of the navigation */
+    border: 2px solid var(--main-color); /* Adds a border with the main accent color */
+    border-top: none; /* Removes the top border */
+  }
+
+  .header--nav a {
+    font-size: 2rem; /* Sets the font size for navigation links */
+  }
+
+  .image img {
+    width: 60vw; /* Sets the image width to 60% of the viewport width */
+  }
+
+  .home {
+    gap: 4rem; /* Adds a 4rem gap between home section elements */
+    margin: 4rem 0; /* Adds a 4rem margin on top and bottom */
+  }
+  .about h2 {
+    font-size: 5.5rem; /* Sets the font size for the heading in the about section */
+    text-align: center; /* Centers the heading text in the about section */
+    margin-bottom: 6rem;
+  }
+}
+
+/* Small screens - Max width 768px */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stacks header elements vertically */
+    gap: 1rem; /* Adds a 1rem gap between header elements */
+    padding: 2rem 5%; /* Adds padding inside the header */
+  }
+
+  .header--nav {
+    display: none; /* Hides the navigation by default */
+    position: absolute; /* Positions the navigation absolutely */
+    top: 100%; /* Places the navigation directly below the header */
+    padding: 1rem 3rem; /* Adds padding inside the navigation */
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.8
+    ); /* Sets a semi-transparent black background */
+    border-radius: 2rem; /* Rounds the corners of the navigation */
+    border: 2px solid var(--main-color); /* Adds a border with the main accent color */
+    border-top: none; /* Removes the top border */
+  }
+
+  .header--nav a {
+    font-size: 2rem; /* Sets the font size for navigation links */
+  }
+
+  .image img {
+    width: 70vw; /* Sets the image width to 70% of the viewport width */
+  }
+
+  .home {
+    gap: 3rem; /* Adds a 3rem gap between home section elements */
+    margin: 3rem 0; /* Adds a 3rem margin on top and bottom */
+  }
+
+  .home--content h1 {
+    font-size: 5rem; /* Sets the font size for the main heading in the home section */
+  }
+
+  .home--content h3 {
+    font-size: 3rem; /* Sets the font size for the subheading in the home section */
+  }
+
+  .about h2 {
+    font-size: 4.7rem; /* Sets the font size for the heading in the about section */
+    text-align: center; /* Centers the heading text in the about section */
+    margin-bottom: 3rem;
+  }
+
+  .header--button {
+    padding: 0.75rem 1.5rem; /* Adjusts padding for header buttons */
+  }
+}
+
+/* Extra small screens - Max width 576px */
+@media (max-width: 576px) {
+  .header--nav {
+    display: none; /* Hides the navigation by default */
+    position: absolute; /* Positions the navigation absolutely */
+    top: 100%; /* Places the navigation directly below the header */
+    padding: 0.8rem 2.5rem; /* Adds padding inside the navigation */
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.8
+    ); /* Sets a semi-transparent black background */
+    border-radius: 2rem; /* Rounds the corners of the navigation */
+    border: 2px solid var(--main-color); /* Adds a border with the main accent color */
+    border-top: none; /* Removes the top border */
+  }
+
+  .header--nav a {
+    font-size: 1.5rem; /* Sets the font size for navigation links */
+  }
+
+  .image img {
+    width: 80vw; /* Sets the image width to 80% of the viewport width */
+  }
+
+  .home {
+    gap: 2rem; /* Adds a 2rem gap between home section elements */
+    margin: 2rem 0; /* Adds a 2rem margin on top and bottom */
+  }
+
+  .home--content h1 {
+    font-size: 4rem; /* Sets the font size for the main heading in the home section */
+  }
+
+  .home--content h3 {
+    font-size: 2.5rem; /* Sets the font size for the subheading in the home section */
+  }
+
+  .about h2 {
+    font-size: 4.6rem; /* Sets the font size for the heading in the about section */
+    text-align: center; /* Centers the heading text in the about section */
+    margin-bottom: 3rem;
+  }
+}
+
+/* Extra small screens - Max width 419px */
+@media (max-width: 419px) {
+  .header--nav {
+    display: none; /* Hides the navigation by default */
+    position: absolute; /* Positions the navigation absolutely */
+    top: 100%; /* Places the navigation directly below the header */
+    padding: 0.5rem 1rem; /* Adds padding inside the navigation */
+    margin-right: auto; /* Aligns the navigation to the left */
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.8
+    ); /* Sets a semi-transparent black background */
+    border-radius: 2rem; /* Rounds the corners of the navigation */
+    border: 2px solid var(--main-color); /* Adds a border with the main accent color */
+    border-top: none; /* Removes the top border */
+  }
+
+  header .header--logo {
+    font-size: 2.5rem; /* Sets the font size for the header logo */
+  }
+
+  .header--nav a {
+    display: inline-flex; /* Displays navigation links in a flexible inline format */
+    flex-wrap: wrap; /* Allows navigation links to wrap onto the next line if necessary */
+    font-size: 1.2rem; /* Sets the font size for navigation links */
+  }
+
+  .image img {
+    width: 70vw; /* Sets the image width to 70% of the viewport width */
+  }
+
+  .home {
+    gap: 2rem; /* Adds a 2rem gap between home section elements */
+    margin: 2rem 0; /* Adds a 2rem margin on top and bottom */
+  }
+
+  .home--content h1 {
+    font-size: 3rem; /* Sets the font size for the main heading in the home section */
+  }
+
+  .home--content h3 {
+    font-size: 2rem; /* Sets the font size for the subheading in the home section */
+  }
+
+  .about h2 {
+    font-size: 4.5rem; /* Sets the font size for the heading in the about section */
+    text-align: center; /* Centers the heading text in the about section */
+    margin-bottom: 2rem;
+  }
+
+  .about p {
+    font-size: 2.5rem; /* Sets the font size for paragraphs in the about section */
+    text-align: center; /* Centers the paragraph text in the about section */
+  }
+
+  section .contact--title {
+    font-size: 5rem; /* Sets the font size for the contact title */
+    text-align: center; /* Centers the contact title text */
+  }
+}

@@ -10,7 +10,7 @@ export default function Projects() {
           // alt="Project 5"
           title="Kesh Malik Website"
           paragraph="A freelance project for a board games and coffee shop in Kaa El Rim, Zahle. Built using React (Vite) and Tailwind CSS, the website allows users to explore games, view the menu, check events, and connect via social media."
-          url="#"
+          url="https://kesh-malik.netlify.app/"
         />
         <Project
           // image="project2"
